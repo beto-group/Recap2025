@@ -1,7 +1,7 @@
 const { useEffect, useRef, useState, useMemo } = dc;
-
-const { HyperCacheMedia } = await dc.require(dc.resolvePath('RECAP 2025/src/components/NodeGraph/HyperCacheMedia.jsx') || dc.resolvePath('71 Recap2025/src/components/NodeGraph/HyperCacheMedia.jsx'));
-const { TacticalComments, EmojiRain } = await dc.require(dc.resolvePath('RECAP 2025/src/components/TacticalComments.jsx') || dc.resolvePath('71 Recap2025/src/components/TacticalComments.jsx'));
+const currentFolderPath = dc.currentFolderPath || "";
+const { HyperCacheMedia } = await dc.require(currentFolderPath + '/src/components/NodeGraph/HyperCacheMedia.jsx');
+const { TacticalComments, EmojiRain } = await dc.require(currentFolderPath + '/src/components/TacticalComments.jsx');
 
 function NodeGraph({ data, isAutoPlayActive, setIsAutoPlayActive, folderPath }) {
     const canvasRef = useRef(null);

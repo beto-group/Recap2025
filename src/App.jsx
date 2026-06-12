@@ -46,7 +46,8 @@ const resolveSmart = (name, header = null) => {
     return absolute;
 };
 
-const { NodeGraph } = await dc.require(dc.resolvePath('RECAP 2025/src/components/NodeGraph.jsx') || dc.resolvePath('71 Recap2025/src/components/NodeGraph.jsx') || dc.resolvePath('NodeGraph.jsx'));
+const currentFolderPath = dc.currentFolderPath || "";
+const { NodeGraph } = await dc.require(currentFolderPath + '/src/components/NodeGraph.jsx');
 
 
 function AnimationTool({ folderPath }) {

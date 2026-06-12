@@ -1,9 +1,10 @@
 ---
-cssclasses:
-  - recap-2025
+layout: full
 ---
 
 ```datacorejsx
-const { View } = await dc.require(dc.resolvePath("RECAP 2025/src/index.jsx"));
-return View({ folderPath: dc.resolvePath("RECAP 2025") });
+const currentFilePath = dc.useCurrentPath();
+const folderPath = currentFilePath ? currentFilePath.substring(0, currentFilePath.lastIndexOf("/")) : "";
+const { View } = await dc.require(folderPath + "/src/index.jsx");
+return await View({ folderPath, dc });
 ```

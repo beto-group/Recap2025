@@ -3,7 +3,7 @@ author: beto.group
 contributor: []
 version: 1.0.0
 id: recap-2025-071
-name: RECAP 2025
+name: Recap2025
 description: Interactive 3D node graph and media dashboard highlighting BETO 888 milestones, travels, and Datacore components developed throughout 2025.
 status: stable
 complexity: advanced
@@ -15,7 +15,8 @@ repository:
   - https://github.com/beto-group/Recap2025
 missing: []
 resources:
-  - assets/preview.gif
+  - assets/image/preview_1.webp
+  - assets/videos/preview.gif
 type: DatacoreComponent
 target: Datacore
 security:

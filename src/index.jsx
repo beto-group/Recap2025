@@ -1,6 +1,7 @@
 
 async function View({ folderPath }) {
     if (!folderPath) throw new Error("View requires folderPath prop");
+    dc.currentFolderPath = folderPath;
 
     const SafeView = () => {
         dc.useEffect(() => {
@@ -26,7 +27,7 @@ async function View({ folderPath }) {
         dc.useEffect(() => {
             const load = async () => {
                 try {
-                    const appPath = dc.resolvePath("RECAP 2025/src/App.jsx") || (folderPath + '/src/App.jsx');
+                    const appPath = folderPath + '/src/App.jsx';
                     const { AnimationTool } = await dc.require(appPath);
                     setApp({ AnimationTool });
                 } catch (e) {

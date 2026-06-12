@@ -1,7 +1,8 @@
 const { useMemo } = dc;
-const { isMediaVideo, getYTId, isLink, getInteractiveUrl, openResource } = await dc.require(dc.resolvePath('RECAP 2025/src/components/NodeGraph/NodeGraphUtils.js') || dc.resolvePath('71 Recap2025/src/components/NodeGraph/NodeGraphUtils.js'));
-const { SafeVideoPlayer } = await dc.require(dc.resolvePath('RECAP 2025/src/components/NodeGraph/SafeVideoPlayer.jsx') || dc.resolvePath('71 Recap2025/src/components/NodeGraph/SafeVideoPlayer.jsx')); // Still importing for type check/placeholder if needed, or we can just use div
-const { AutoScrollWebview } = await dc.require(dc.resolvePath('RECAP 2025/src/components/AutoScrollWebview.jsx') || dc.resolvePath('71 Recap2025/src/components/AutoScrollWebview.jsx'));
+const currentFolderPath = dc.currentFolderPath || "";
+const { isMediaVideo, getYTId, isLink, getInteractiveUrl, openResource } = await dc.require(currentFolderPath + '/src/components/NodeGraph/NodeGraphUtils.js');
+const { SafeVideoPlayer } = await dc.require(currentFolderPath + '/src/components/NodeGraph/SafeVideoPlayer.jsx'); // Still importing for type check/placeholder if needed, or we can just use div
+const { AutoScrollWebview } = await dc.require(currentFolderPath + '/src/components/AutoScrollWebview.jsx');
 
 const SliderItem = ({ m, idx, itemWidth, mediaIndex, baseLen, parentActive, isCenterActive, folderPath, preload }) => {
     const focusIdx = mediaIndex;

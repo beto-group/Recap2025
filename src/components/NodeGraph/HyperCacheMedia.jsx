@@ -1,14 +1,15 @@
 const { useEffect, useRef, useState, useMemo } = dc;
-const { CONTAIN_STYLE, isMediaVideo, isMediaImage, isMediaLocal, getYouTubeEmbed, isLink, getInteractiveUrl, openResource } = await dc.require(dc.resolvePath('RECAP 2025/src/components/NodeGraph/NodeGraphUtils.js') || dc.resolvePath('71 Recap2025/src/components/NodeGraph/NodeGraphUtils.js'));
-const { SafeVideoPlayer } = await dc.require(dc.resolvePath('RECAP 2025/src/components/NodeGraph/SafeVideoPlayer.jsx') || dc.resolvePath('71 Recap2025/src/components/NodeGraph/SafeVideoPlayer.jsx'));
-const { SliderList, SliderItem } = await dc.require(dc.resolvePath('RECAP 2025/src/components/NodeGraph/SliderComponents.jsx') || dc.resolvePath('71 Recap2025/src/components/NodeGraph/SliderComponents.jsx'));
+const currentFolderPath = dc.currentFolderPath || "";
+const { CONTAIN_STYLE, isMediaVideo, isMediaImage, isMediaLocal, getYouTubeEmbed, isLink, getInteractiveUrl, openResource } = await dc.require(currentFolderPath + '/src/components/NodeGraph/NodeGraphUtils.js');
+const { SafeVideoPlayer } = await dc.require(currentFolderPath + '/src/components/NodeGraph/SafeVideoPlayer.jsx');
+const { SliderList, SliderItem } = await dc.require(currentFolderPath + '/src/components/NodeGraph/SliderComponents.jsx');
 
-const { GlobeTravel } = await dc.require(dc.resolvePath('RECAP 2025/src/components/GlobeTravel.jsx') || dc.resolvePath('71 Recap2025/src/components/GlobeTravel.jsx'));
-const { TacticalComments, TacticalEmojiHUD, EmojiRain } = await dc.require(dc.resolvePath('RECAP 2025/src/components/TacticalComments.jsx') || dc.resolvePath('71 Recap2025/src/components/TacticalComments.jsx'));
-const { WebsiteCard } = await dc.require(dc.resolvePath('RECAP 2025/src/components/WebsiteCard.jsx') || dc.resolvePath('71 Recap2025/src/components/WebsiteCard.jsx'));
-const { AutoScrollWebview } = await dc.require(dc.resolvePath('RECAP 2025/src/components/AutoScrollWebview.jsx') || dc.resolvePath('71 Recap2025/src/components/AutoScrollWebview.jsx'));
-const { Goals2026 } = await dc.require(dc.resolvePath('RECAP 2025/src/components/Goals2026.jsx') || dc.resolvePath('71 Recap2025/src/components/Goals2026.jsx'));
-const { LiveStream2026 } = await dc.require(dc.resolvePath('RECAP 2025/src/components/LiveStream2026.jsx') || dc.resolvePath('71 Recap2025/src/components/LiveStream2026.jsx'));
+const { GlobeTravel } = await dc.require(currentFolderPath + '/src/components/GlobeTravel.jsx');
+const { TacticalComments, TacticalEmojiHUD, EmojiRain } = await dc.require(currentFolderPath + '/src/components/TacticalComments.jsx');
+const { WebsiteCard } = await dc.require(currentFolderPath + '/src/components/WebsiteCard.jsx');
+const { AutoScrollWebview } = await dc.require(currentFolderPath + '/src/components/AutoScrollWebview.jsx');
+const { Goals2026 } = await dc.require(currentFolderPath + '/src/components/Goals2026.jsx');
+const { LiveStream2026 } = await dc.require(currentFolderPath + '/src/components/LiveStream2026.jsx');
 
 function HyperCacheMedia({ item, active, mediaIndex, dimensions, autoPlay, preload, isVisible, folderPath }) {
     const [containerWidth, setContainerWidth] = useState(0);
